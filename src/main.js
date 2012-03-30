@@ -214,7 +214,9 @@ exports.main = function () {
     director.displayFPS = true
 
     events.addListener(director, 'ready', function (director) {
-        director.replaceScene(new PhysicsDemo)
+        var scene = new cocos.nodes.Scene
+        scene.addChild(new PhysicsDemo)
+        director.replaceScene(scene)
     })
 
     director.runPreloadScene()
